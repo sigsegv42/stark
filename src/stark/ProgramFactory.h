@@ -9,7 +9,7 @@
 #include <boost/shared_ptr.hpp>
 #include <string>
 
-#include <gl/Program.h>
+#include <vertical3d/gl/Program.h>
 
 class AssetLoader;
 
