@@ -1,2 +1,8 @@
 /build.win32/Debug/
 /project/Debug/
+/project/Release/
+/build.win32/Release/
+/project/stark.sdf
+/project/stark.vcxproj.user
+/project/stark*.suo
+

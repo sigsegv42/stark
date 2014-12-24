@@ -7,7 +7,7 @@
 #include "ProgramFactory.h"
 #include "AssetLoader.h"
 
-#include <gl/Shader.h>
+#include <vertical3d/gl/Shader.h>
 
 ProgramFactory::ProgramFactory(boost::shared_ptr<AssetLoader> loader)
 	: loader_(loader)

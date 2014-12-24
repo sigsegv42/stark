@@ -7,13 +7,12 @@
 
 #include "AssetLoader.h"
 
-#include <log4cxx/logger.h>
-
 #include <fstream>
 
-AssetLoader::AssetLoader(const std::string & path, const std::string & logname) :
-	path_(path),
-	log_(logname)
+#include <boost/log/trivial.hpp>
+
+AssetLoader::AssetLoader(const std::string & path) :
+	path_(path)
 {
 }
 
@@ -24,8 +23,6 @@ std::string AssetLoader::path() const
 
 std::string AssetLoader::load(const std::string & filename)
 {
-	log4cxx::LoggerPtr logger(log4cxx::Logger::getLogger(log_));
-
 	std::string fullPath = path_ + filename;
 
 	// read shader file content
@@ -33,7 +30,7 @@ std::string AssetLoader::load(const std::string & filename)
 	if (!file)
 	{
 		std::string err = std::string("error loading asset file: ") + fullPath + std::string(" - ") + strerror(errno);
-		LOG4CXX_ERROR(logger, err);
+		BOOST_LOG_TRIVIAL(error) << err;
 		throw std::runtime_error(err);
 	}
 	std::string content;

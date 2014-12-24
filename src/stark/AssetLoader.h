@@ -19,9 +19,8 @@ class AssetLoader
 		 * Default constructor
 		 *
 		 * @param string path base asset directory path
-		 * @param string logname global log file name
 		 */
-		AssetLoader(const std::string & path, const std::string & logname);
+		AssetLoader(const std::string & path);
 
 		/**
 		 * Load an asset from a file into a string
@@ -41,5 +40,4 @@ class AssetLoader
 
 	private:
 		std::string path_;
-		std::string log_;
 };
